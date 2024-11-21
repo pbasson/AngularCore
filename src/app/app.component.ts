@@ -9,5 +9,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'AngularCore';
+  title = 'User';
+  successMsg = 'Congratulations! Your app is running. 🎉';
+  newLine = "This Phantom Preet the new ruler !!!!!";
 }
