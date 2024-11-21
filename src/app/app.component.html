@@ -4,12 +4,19 @@
     <div class="left-side">
   
       <h1>Hello, {{ title }}</h1>
-      <p> {{ successMsg }}</p>
-      <p> {{ newLine }}</p>
+      
+      <p> successMsg: {{ successMsg }}</p>
+      <p> newLine: {{ newLine }}</p>
+      <br />
+      
+      <p> dateMsg: {{ dateMsg.getTime()  }}</p>
 
+      <p>DateTime as object : {{ todayDate | date: 'short'  }} </p> 
+        
+      <br />
+
+      <button class="btn ">Test</button>
     </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
- 
   </div>
 </main>
 
