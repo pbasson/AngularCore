@@ -7,9 +7,17 @@
 
 <p> dateMsg: {{ dateMsg.getTime()  }}</p>
 
-<p>DateTime-01: : {{ todayDate | date: 'EEEE, y/M/d - h:mm:ss a'  }} </p> 
+<p>DateTime-01: {{ todayDate | date: 'EEEE, y/M/d - h:mm:ss a'  }} </p> 
 <p>DateTime-02: {{ todayDate | date: 'EEEE, d/M/y - h:mm:ss a'  }} </p> 
+
+
+<section>
+    <form>
+      <input type="text" placeholder="Filter by city" />
+      <button class="primary" type="button">Search</button>
+    </form>
+</section>
 
 <br />
 
-<button class="btn" >Test</button>
+<button class="btn"  >Test</button>
