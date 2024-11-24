@@ -15,4 +15,14 @@ export class IndexComponent {
   
   dateMsg: Date = new Date();
   todayDate: Date = new Date();
+
+  alerttest(): void{
+    alert("Testbutton ");
+  }
+
+  getDate()
+  {
+    this.dateMsg = new Date();
+    this.todayDate = new Date();
+  }
 }
