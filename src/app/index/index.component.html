@@ -1,25 +1,7 @@
 
-<h1>Hello, {{ title }}</h1>
-
-<p> successMsg: {{ successMsg }}</p>
-<p> newLine: {{ newLine }}</p>
-<br />
-
-<p> dateMsg: {{ dateMsg.getTime()  }}</p>
-
-<p>DateTime-01: {{ todayDate | date: 'EEEE, y/M/d - h:mm:ss a'  }} </p> 
-<p>DateTime-02: {{ todayDate | date: 'EEEE, d/M/y - h:mm:ss a'  }} </p> 
-
-
-<section>
-    <form>
-      <input type="text" placeholder="Filter by city" />
-      <button class="primary" type="button">Search</button>
-    </form>
-</section>
+<h1>{{ title }}</h1>
 
 <br />
 
-<button class="btn primary" type="button" (click)="alerttest()" >Test</button>
+<button class="btn primary" type="button" (click)="alerttest()" >Test Alert</button>
 
-<button class="btn primary" type="button" (click)="getDate()" >Get Date</button>

@@ -1,28 +1,17 @@
 import { Component } from '@angular/core';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-index',
   standalone: true,
-  imports: [DatePipe],
+  imports: [ ],
   templateUrl: './index.component.html',
   styleUrl: './index.component.css'
 })
 export class IndexComponent {
-  title = 'User';
-  successMsg = 'Congratulations! Your app is running. 🎉';
-  newLine = "!!!!!";
-  
-  dateMsg: Date = new Date();
-  todayDate: Date = new Date();
+  title = 'Angular Core Project';
 
   alerttest(): void{
-    alert("Testbutton ");
+    alert("Alert is Successful ");
   }
 
-  getDate()
-  {
-    this.dateMsg = new Date();
-    this.todayDate = new Date();
-  }
 }
