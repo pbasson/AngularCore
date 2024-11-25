@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile
     ports:
-      - "4200:4200"
+      - "4210:4200"
     volumes:
       - ./:/project
       - /project/node_modules
