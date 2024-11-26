@@ -2,9 +2,10 @@
 <button class="btn primary" type="button" (click)="resetDate()" >Reset Date</button>
 <br />
 
-<table class="">
+<table class="table">
   <thead>
     <tr>
+        <th>Index</th>  
         <th>Day</th>  
         <th>Date</th>  
         <th>Time</th>  
@@ -24,6 +25,7 @@
     </tr> -->
     @for (item of dateClassList; track $index) {
       <tr>
+        <td> {{ $index }} </td>
         <td> {{ item.day }} </td>
         <td> {{ item.date }} </td>
         <td> {{ item.time  }} </td>

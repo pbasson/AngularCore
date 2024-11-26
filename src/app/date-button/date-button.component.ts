@@ -11,19 +11,17 @@ import { DateClass } from '../../models/date-class.model';
 export class DateButtonComponent {
   todayDate: Date = new Date();
   dateClassList: DateClass[] = [ ];
+  datePipe =  new DatePipe("en-GB");
   
   constructor() {
     this.getDate();    
   }
 
-  getDate()
-  {
+  getDate() {
     this.todayDate = new Date();
-
-    var datePipe =  new DatePipe("en-GB");
-    var dayDisplay = datePipe.transform(this.todayDate, 'EEEE')?.toString() ?? '';
-    var dateDisplay = datePipe.transform(this.todayDate, 'd/M/y')?.toString() ?? '';
-    var timeDisplay = datePipe.transform(this.todayDate, 'h:mm:ss a')?.toString() ?? '';
+    var dayDisplay = this.datePipe.transform(this.todayDate, 'EEEE')?.toString() ?? '';
+    var dateDisplay = this.datePipe.transform(this.todayDate, 'd/M/y')?.toString() ?? '';
+    var timeDisplay = this.datePipe.transform(this.todayDate, 'h:mm:ss a')?.toString() ?? '';
     
     var dateClass1 = new DateClass(dayDisplay, dateDisplay, timeDisplay);
     this.dateClassList.push(dateClass1);
