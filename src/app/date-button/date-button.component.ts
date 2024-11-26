@@ -5,13 +5,17 @@ import { DateClass } from '../../models/date-class.model';
 @Component({
   selector: 'app-date-button',
   standalone: true,
-  imports: [DatePipe],
+  imports: [],
   templateUrl: './date-button.component.html',
 })
 export class DateButtonComponent {
   todayDate: Date = new Date();
   dateClassList: DateClass[] = [ ];
   
+  constructor() {
+    this.getDate();    
+  }
+
   getDate()
   {
     this.todayDate = new Date();
@@ -27,6 +31,7 @@ export class DateButtonComponent {
 
   resetDate() { 
     this.dateClassList = [];
+    this.getDate();    
   }
 
 }
