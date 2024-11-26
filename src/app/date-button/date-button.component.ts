@@ -14,7 +14,6 @@ export class DateButtonComponent {
   dateClassList: DateClass[] = [ ];
   datePipe =  new DatePipe("en-GB");
 
-
   constructor() {
     this.getDate();    
   }
@@ -30,8 +29,10 @@ export class DateButtonComponent {
   }
 
   resetDate() { 
-    this.dateClassList = [];
-    this.getDate();    
+    if (window.confirm("Do you want to reset date table?")){
+      this.dateClassList = [];
+      this.getDate();    
+    }
   }
 
 }
