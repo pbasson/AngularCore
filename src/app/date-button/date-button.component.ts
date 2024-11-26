@@ -13,24 +13,20 @@ export class DateButtonComponent {
   todayDate: Date = new Date();
   dateClassList: DateClass[] = [ ];
   datePipe =  new DatePipe("en-GB");
-
+  confirmReset = "Do you want to reset date table?";
+  
   constructor() {
-    this.getDate();    
+    this.getDate();
+    this.resetDateToToday();    
   }
 
   getDate() {
-    this.todayDate = new Date();
-
+    // this.todayDate = new Date();
     this.dateClassList.push( this.setDateClass() );
   }
 
   getDayDate() {
-    this.todayDate = new Date();
-    console.log( "Today Date: " + this.todayDate );
-    console.log( "Date Class: " + this.dateClassList.length );
-    this.todayDate.setDate( this.dateClassList.length );
-    console.log(this.todayDate );
-
+    this.todayDate.setDate( this.todayDate.getDate() + 1 );
     this.dateClassList.push( this.setDateClass() );
   }
 
@@ -44,10 +40,13 @@ export class DateButtonComponent {
   }
 
   resetDate() { 
-    if (window.confirm("Do you want to reset date table?")){
+    if (window.confirm( this.confirmReset )){
       this.dateClassList = [];
       this.getDate();    
     }
   }
 
+  resetDateToToday() {
+    this.todayDate = new Date();
+  }
 }
