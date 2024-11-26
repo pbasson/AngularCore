@@ -16,12 +16,11 @@ export class DateButtonComponent {
   confirmReset = "Do you want to reset date table?";
   
   constructor() {
+    this.resetDateToNow();    
     this.getDate();
-    this.resetDateToToday();    
   }
 
   getDate() {
-    // this.todayDate = new Date();
     this.dateClassList.push( this.setDateClass() );
   }
 
@@ -46,7 +45,7 @@ export class DateButtonComponent {
     }
   }
 
-  resetDateToToday() {
+  resetDateToNow() {
     this.todayDate = new Date();
   }
 }
