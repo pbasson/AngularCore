@@ -1,9 +1,4 @@
-<!-- <p> dateMsg: {{ dateMsg.getTime()  }}</p>
-
-<p>DateTime-01: {{ todayDate | date: 'EEEE, y/M/d - h:mm:ss a'  }} </p> 
-<p>DateTime-02: {{ todayDate | date: 'EEEE, d/M/y - h:mm:ss a'  }} </p>  -->
-
-<table>
+<table class="">
   <thead>
     <tr>
         <th>Day</th>  
@@ -13,7 +8,7 @@
   </thead>
   
   <tbody>
-    <tr>
+    <!-- <tr>
         <td>{{ todayDate | date: 'EEEE'  }}</td>
         <td>{{ todayDate | date: 'y/M/d'  }}</td>
         <td>{{ todayDate | date: 'h:mm:ss a'  }}</td>
@@ -22,7 +17,14 @@
         <td>{{ todayDate | date: 'EEEE'  }}</td>
         <td>{{ todayDate | date: 'd/M/y'  }}</td>
         <td>{{ todayDate | date: 'h:mm:ss a'  }}</td>
-    </tr>
+    </tr> -->
+    @for (item of dateClassList; track $index) {
+      <tr>
+        <td> {{ item.day }} </td>
+        <td> {{ item.date }} </td>
+        <td> {{ item.time  }} </td>
+      </tr>
+    }
   </tbody>
 </table>
 <br />
