@@ -1,14 +1,16 @@
-<button class="btn btn-primary" type="button" (click)="getDate()" ><i class="bi bi-search"></i> Get Date</button>
-<button class="btn btn-danger" type="button" (click)="resetDate()" ><i class="bi bi-arrow-clockwise"></i>Reset Date</button>
+<button class="btn btn-outline-primary" type="button" (click)="getDate()" ><i class="bi bi-search"></i> Get Date</button>
+<button class="btn btn-outline-primary" type="button" (click)="getDayDate()" ><i class="bi bi-search"></i> Get Day Date</button>
+<button class="btn btn-outline-danger" type="button" (click)="resetDate()" ><i class="bi bi-arrow-clockwise"></i>Reset Date</button>
 <br />
 
-<table class="table">
+<table class="table table-hover">
   <thead>
     <tr>
         <th>Index</th>  
         <th>Day</th>  
         <th>Date</th>  
         <th>Time</th>  
+        <th>Temp</th>  
     </tr>
   </thead>
   
@@ -19,7 +21,8 @@
         <td> {{ $index }} </td>
         <td> {{ item.day }} </td>
         <td> {{ item.date }} </td>
-        <td> {{ item.time  }} </td>
+        <td> {{ item.time }} </td>
+        <td> {{ item.temperature }} </td>
       </tr>
     }
   </tbody>

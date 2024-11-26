@@ -20,12 +20,27 @@ export class DateButtonComponent {
 
   getDate() {
     this.todayDate = new Date();
+
+    this.dateClassList.push( this.setDateClass() );
+  }
+
+  getDayDate() {
+    this.todayDate = new Date();
+    console.log( "Today Date: " + this.todayDate );
+    console.log( "Date Class: " + this.dateClassList.length );
+    this.todayDate.setDate( this.dateClassList.length );
+    console.log(this.todayDate );
+
+    this.dateClassList.push( this.setDateClass() );
+  }
+
+  setDateClass() : DateClass {
     var dayDisplay = this.datePipe.transform(this.todayDate, 'EEEE')?.toString() ?? this.defaultStr;
     var dateDisplay = this.datePipe.transform(this.todayDate, 'd/M/y')?.toString() ?? this.defaultStr;
     var timeDisplay = this.datePipe.transform(this.todayDate, 'h:mm:ss a')?.toString() ?? this.defaultStr;
-    
-    var dateClass1 = new DateClass(dayDisplay, dateDisplay, timeDisplay);
-    this.dateClassList.push(dateClass1);
+    var tempDisplay = Math.trunc( (Math.random() * (  55 + 70)) - 70 ).toString() + " oC";
+
+    return new DateClass(dayDisplay, dateDisplay, timeDisplay,tempDisplay);
   }
 
   resetDate() { 
