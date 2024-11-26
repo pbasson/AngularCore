@@ -17,11 +17,16 @@ export class DateButtonComponent {
     this.todayDate = new Date();
 
     var datePipe =  new DatePipe("en-GB");
-    var test1 = datePipe.transform(this.todayDate, 'EEEE')?.toString() ?? '';
-    var test2 = datePipe.transform(this.todayDate, 'd/M/y')?.toString() ?? '';
-    var test3 = datePipe.transform(this.todayDate, 'h:mm:ss a')?.toString() ?? '';
+    var dayDisplay = datePipe.transform(this.todayDate, 'EEEE')?.toString() ?? '';
+    var dateDisplay = datePipe.transform(this.todayDate, 'd/M/y')?.toString() ?? '';
+    var timeDisplay = datePipe.transform(this.todayDate, 'h:mm:ss a')?.toString() ?? '';
     
-    var dateClass1 = new DateClass(test1, test2, test3);
+    var dateClass1 = new DateClass(dayDisplay, dateDisplay, timeDisplay);
     this.dateClassList.push(dateClass1);
   }
+
+  resetDate() { 
+    this.dateClassList = [];
+  }
+
 }
