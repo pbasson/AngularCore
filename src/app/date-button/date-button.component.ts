@@ -14,7 +14,9 @@ export class DateButtonComponent {
   dateClassList: DateClass[] = [ ];
   datePipe =  new DatePipe("en-GB");
   confirmReset = "Do you want to reset date table?";
-  
+  minTempature: number = -35;
+  maxTempature: number = 55;
+
   constructor() {
     this.resetDateToNow();    
     this.getDate();
@@ -33,7 +35,7 @@ export class DateButtonComponent {
     var dayDisplay = this.datePipe.transform(this.todayDate, 'EEEE')?.toString() ?? this.defaultStr;
     var dateDisplay = this.datePipe.transform(this.todayDate, 'd/M/y')?.toString() ?? this.defaultStr;
     var timeDisplay = this.datePipe.transform(this.todayDate, 'h:mm:ss a')?.toString() ?? this.defaultStr;
-    var tempDisplay = Math.trunc( (Math.random() * (  55 + 70)) - 70 ).toString() + " oC";
+    var tempDisplay = Math.trunc( (Math.random() * (  this.maxTempature - this.minTempature)) + this.minTempature ).toString() + " oC";
 
     return new DateClass(dayDisplay, dateDisplay, timeDisplay,tempDisplay);
   }
