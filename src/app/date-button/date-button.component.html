@@ -13,16 +13,7 @@
   </thead>
   
   <tbody>
-    <!-- <tr>
-        <td>{{ todayDate | date: 'EEEE'  }}</td>
-        <td>{{ todayDate | date: 'y/M/d'  }}</td>
-        <td>{{ todayDate | date: 'h:mm:ss a'  }}</td>
-    </tr>
-    <tr>
-        <td>{{ todayDate | date: 'EEEE'  }}</td>
-        <td>{{ todayDate | date: 'd/M/y'  }}</td>
-        <td>{{ todayDate | date: 'h:mm:ss a'  }}</td>
-    </tr> -->
+
     @for (item of dateClassList; track $index) {
       <tr>
         <td> {{ $index }} </td>

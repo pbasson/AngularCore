@@ -1,4 +1,6 @@
-export class DateClass {
+import { DateVM } from "./date-vm";
+
+export class DateClass implements DateVM {
     public day : string;
     public date: string;
     public time: string; 
