@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DateSettings } from '../../models/date-settings';
+import { DateClass } from '../../models/date-class.model';
 
 @Component({
   selector: 'app-date-grid',
@@ -9,6 +9,6 @@ import { DateSettings } from '../../models/date-settings';
   styleUrl: './date-grid.component.css'
 })
 export class DateGridComponent {
-  @Input({ required:true }) dateSetting!: DateSettings;
+  @Input({ required:true }) dataSource!: DateClass[];
        
 }
