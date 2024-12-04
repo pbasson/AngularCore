@@ -7,13 +7,13 @@ export class DateSettings {
     readonly confirmReset = "Do you want to reset date table?";
     readonly minTempature: number = -35;
     readonly maxTempature: number = 55;
-    
+    readonly pageSize: number = 5;
+
     todayDate: Date = new Date();
     dateClassList: DateClass[] = [ ];
   
     constructor() {
-        this.resetDateToNow();  
-        this.getDate();
+        this.resetDayDate();
     }
   
     getDate() {
@@ -26,13 +26,6 @@ export class DateSettings {
       this.dateClassList.push( this.setDateClass() );
     }
   
-    resetDate() { 
-      if (window.confirm( this.confirmReset )){
-        this.dateClassList = [];
-        this.getDate();    
-      }
-    }
-  
     setDateClass() : DateClass {
       var dayDisplay = this.datePipe.transform(this.todayDate, 'EEEE')?.toString() ?? this.defaultStr;
       var dateDisplay = this.datePipe.transform(this.todayDate, 'd/M/y')?.toString() ?? this.defaultStr;
@@ -42,8 +35,23 @@ export class DateSettings {
       return new DateClass(dayDisplay, dateDisplay, timeDisplay,tempDisplay);
     }
   
+    resetDate() { 
+      if (window.confirm( this.confirmReset )){
+        this.dateClassList = [];
+        this.resetDayDate()
+      }
+    }
+
     resetDateToNow() {
       this.todayDate = new Date();
+    }
+
+    resetDayDate()
+    {
+      this.getDate();
+      for (let index = 0; index < this.pageSize; index++) {
+        this.getDayDate();    
+      }
     }
 
 }
