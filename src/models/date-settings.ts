@@ -46,8 +46,7 @@ export class DateSettings {
       this.todayDate = new Date();
     }
 
-    resetDayDate()
-    {
+    resetDayDate() {
       this.getDate();
       for (let index = 0; index < this.pageSize; index++) {
         this.getDayDate();    

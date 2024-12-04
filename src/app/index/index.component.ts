@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { DateButtonComponent } from '../date-button/date-button.component';
+import { DatePageComponent } from '../date-page/date-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-index',
   standalone: true,
-  imports: [DateButtonComponent, NgbModule],
+  imports: [DatePageComponent, NgbModule],
   templateUrl: './index.component.html',
   styleUrl: './index.component.css'
 })

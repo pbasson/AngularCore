@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { DateSettings } from '../../models/date-settings';
 
 @Component({
-  selector: 'app-date-button',
+  selector: 'app-date-page',
   standalone: true,
   imports: [],
-  templateUrl: './date-button.component.html',
+  templateUrl: './date-page.component.html',
 })
-export class DateButtonComponent {
+export class DatePageComponent {
 
   dateSetting: DateSettings = new DateSettings();
 
