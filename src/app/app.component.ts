@@ -7,8 +7,7 @@ import { IndexComponent } from "./index/index.component";
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, IndexComponent, ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './app.component.html'
 })
 
 export class AppComponent {

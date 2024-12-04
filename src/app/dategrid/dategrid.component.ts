@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { DateSettings } from '../../models/date-settings';
 
 @Component({
   selector: 'app-dategrid',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './dategrid.component.css'
 })
 export class DategridComponent {
-
+  @Input() dateSetting: DateSettings = new DateSettings();
+       
 }

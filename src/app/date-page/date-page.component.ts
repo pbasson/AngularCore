@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { DateSettings } from '../../models/date-settings';
+import { DategridComponent } from '../dategrid/dategrid.component';
 
 @Component({
   selector: 'app-date-page',
   standalone: true,
-  imports: [],
+  imports: [DategridComponent],
   templateUrl: './date-page.component.html',
 })
 export class DatePageComponent {
