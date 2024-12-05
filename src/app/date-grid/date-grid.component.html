@@ -1,4 +1,4 @@
-<table class="table table-hover">
+<!-- <table class="table table-hover">
     <thead>
         <tr>        
             <th>Index</th>  
@@ -8,7 +8,7 @@
             <th>Temp</th>  
         </tr>
     </thead>
-    
+
     <tbody>
         @for (item of dataSource; track $index) {
         <tr>
@@ -20,18 +20,40 @@
         </tr>
         }
     </tbody>
-  </table>
-  
-  
-  <!-- 
-  <table mat-table [dataSource]="dateSetting.dateClassList">
-  
-  </table>
-    -->
-  
-  <!-- <mat-paginator [length]="dateSetting.dateClassList.length"
-                [pageSize]="10"
-                [pageSizeOptions]="[5, 10, 25]"
+</table>
+   -->
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="Index">
+        <th mat-header-cell *matHeaderCellDef> Index </th>
+        <td mat-cell *matCellDef="let element"> {{element.day}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Day">
+        <th mat-header-cell *matHeaderCellDef> Day </th>
+        <td mat-cell *matCellDef="let element"> {{element.day}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Time">
+        <th mat-header-cell *matHeaderCellDef> Time </th>
+        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Temp">
+        <th mat-header-cell *matHeaderCellDef> Temp </th>
+        <td mat-cell *matCellDef="let element"> {{element.temperature}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator  [length]="dataSource.length"
+                [pageSize]="5"
                 aria-label="Select page">
-  </mat-paginator> -->
-  
+</mat-paginator>
