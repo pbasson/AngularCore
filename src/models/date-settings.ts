@@ -9,7 +9,7 @@ export class DateSettings {
     readonly minTempature: number = -35;
     readonly maxTempature: number = 55;
     readonly pageSize: number = 5;
-
+    isLoading = true;
     todayDate: Date = new Date();
     dateClassList: DateClass[] = [ ];
     dataSource = new MatTableDataSource<DateClass>(this.dateClassList);
@@ -17,18 +17,22 @@ export class DateSettings {
     constructor() {
       this.resetDayDate();
       this.setTable();
+      this.checkIsLoading();
     }
   
     getDate() {
       this.resetDateToNow();  
       this.addDateToDataList();
       this.setTable();
+      this.checkIsLoading();
+
     }
   
     getDayDate() {
       this.todayDate.setDate( this.todayDate.getDate() + 1 );
       this.addDateToDataList();
       this.setTable();
+      this.checkIsLoading();
     }
   
     setDateClass() : DateClass {
@@ -64,5 +68,9 @@ export class DateSettings {
     
     setTable() {
       this.dataSource = new MatTableDataSource<DateClass>(this.dateClassList);
+    }
+
+    checkIsLoading() {
+      this.isLoading = (this.dateClassList.length > 0) ? false : true;  
     }
 }

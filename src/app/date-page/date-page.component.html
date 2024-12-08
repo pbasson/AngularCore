@@ -4,4 +4,8 @@
 </div>
 <br />
 
-<app-date-grid [dataSource]="dateSetting.dataSource"></app-date-grid>
+@if (dateSetting.isLoading) {
+  <h3>Loading Spinner</h3>
+} @else {
+  <app-date-grid [dataSource]="dateSetting.dataSource"></app-date-grid>
+}

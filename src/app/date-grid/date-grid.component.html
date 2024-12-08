@@ -53,8 +53,8 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
-<mat-paginator [pageSize]="5"
-               [hidePageSize]="true"
-                
+<mat-paginator  [length]="dataSource.data.length" 
+                [pageSize]="5"
+                [hidePageSize]="true"
                 aria-label="Select page">
 </mat-paginator>
