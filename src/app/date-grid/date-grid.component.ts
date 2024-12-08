@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, AfterViewInit, ViewChild } from '@angular/core';
+import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
+import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { DateClass } from '../../models/date-class.model';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-date-grid',
@@ -10,7 +10,14 @@ import {MatPaginatorModule} from '@angular/material/paginator';
   templateUrl: './date-grid.component.html',
   styleUrl: './date-grid.component.css'
 })
-export class DateGridComponent {
-  @Input({ required:true }) dataSource!: DateClass[];
+export class DateGridComponent implements AfterViewInit {
+  @Input({ required:true }) dataSource!: MatTableDataSource<DateClass>;
   displayedColumns: string[] = ['Index', 'Day', 'Date', 'Time', 'Temp'];     
+
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 }

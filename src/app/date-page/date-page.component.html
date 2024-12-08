@@ -1,8 +1,7 @@
 <div>
-  <!-- <button class="btn btn-outline-primary" type="button" (click)="dateSetting.getDate()" ><i class="bi bi-search"></i> Get Date</button> -->
   <button class="btn btn-outline-primary" type="button" (click)="dateSetting.getDayDate()" ><i class="bi bi-search"></i> Get Day Date</button>
   <button class="btn btn-outline-danger" type="button" (click)="dateSetting.resetDate()" ><i class="bi bi-arrow-clockwise"></i>Reset Date</button>
 </div>
 <br />
 
-<app-date-grid [dataSource]="dateSetting.dateClassList" [dataSource01]="dateSetting.dataSource"></app-date-grid>
+<app-date-grid [dataSource]="dateSetting.dataSource"></app-date-grid>
