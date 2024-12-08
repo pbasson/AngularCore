@@ -1,5 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { DateClass } from '../models/date-class.model';
+import { MatTableDataSource } from '@angular/material/table';
 
 export class DateSettings {
     readonly defaultStr: string = "";
@@ -11,19 +12,29 @@ export class DateSettings {
 
     todayDate: Date = new Date();
     dateClassList: DateClass[] = [ ];
+    dataSource = new MatTableDataSource<DateClass>(this.dateClassList);
   
     constructor() {
         this.resetDayDate();
+        this.setTable();
     }
   
     getDate() {
         this.resetDateToNow();  
-        this.dateClassList.push( this.setDateClass() );
+        this.addDateToDataList();
+        // this.dateClassList.push( this.setDateClass() );
+        this.setTable();
+
     }
   
     getDayDate() {
       this.todayDate.setDate( this.todayDate.getDate() + 1 );
-      this.dateClassList.push( this.setDateClass() );
+      // this.dateClassList.push( this.setDateClass() );
+      
+      console.log("SetDate: " + this.todayDate);      
+      this.addDateToDataList();
+      console.log("Datasource: " + this.dataSource.data.length);
+      this.setTable();
     }
   
     setDateClass() : DateClass {
@@ -53,4 +64,11 @@ export class DateSettings {
       }
     }
 
+    setTable() {
+      this.dataSource = new MatTableDataSource<DateClass>(this.dateClassList);
+    }
+
+    addDateToDataList() {
+      this.dateClassList.push( this.setDateClass() );
+    }
 }
