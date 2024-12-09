@@ -1,4 +1,27 @@
 .mat-mdc-row:hover .mat-mdc-cell {
-    border-color: currentColor;
-  }
-  
+  border-color: currentColor;
+}
+
+.example-loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgb(0, 0, 0);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}  
+
+.example-table-container {
+  position: relative;
+  min-height: 200px;
+  max-height: 400px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}

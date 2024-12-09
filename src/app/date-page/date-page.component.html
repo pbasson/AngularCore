@@ -5,7 +5,12 @@
 <br />
 
 @if (dateSetting.isLoading) {
-  <h3>Loading Spinner</h3>
+  <div class="example-loading-shade">
+    <mat-spinner></mat-spinner>
+    <h3>Loading Spinner</h3>
+  </div>
 } @else {
-  <app-date-grid [dataSource]="dateSetting.dataSource"></app-date-grid>
+  <div class="example-table-container">
+    <app-date-grid [dataSource]="dateSetting.dataSource"></app-date-grid>
+  </div>
 }
